@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>☕ Cafe Finder</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Floating background blobs -->
+    <div class="bg-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <div class="cup-icon">
+            <div class="steam">
+              <span></span><span></span><span></span>
+            </div>
+            ☕
+          </div>
+          <div>
+            <h1>Cafe Finder</h1>
+            <p class="tagline">find your cozy corner ♡</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="find-btn" class="btn-find">
+        <span class="btn-emoji">✨</span>
+        <span class="btn-text">Find Cafes Near Me</span>
+      </button>
+
+      <div class="radius-pill">
+        <span class="radius-label">within</span>
+        <select id="radius">
+          <option value="500">500m</option>
+          <option value="1000">1km</option>
+          <option value="1500" selected>1.5km</option>
+          <option value="3000">3km</option>
+          <option value="5000">5km</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div id="status" class="status hidden"></div>
+
+    <!-- Main -->
+    <div class="main-content">
+      <div class="map-wrapper">
+        <div id="map" class="map-container"></div>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <h2>
+            <span>🧋</span> Nearby Cafes
+            <span id="cafe-count" class="badge"></span>
+          </h2>
+        </div>
+        <div id="cafe-list" class="cafe-list">
+          <div class="empty-state">
+            <div class="empty-anim">
+              <span class="empty-cup">☕</span>
+              <span class="empty-heart">♡</span>
+            </div>
+            <p>tap the button to discover<br/>cute cafes near you!</p>
+            <div class="empty-dots"><span>·</span><span>·</span><span>·</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
